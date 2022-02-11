@@ -6,7 +6,7 @@ namespace Finanztabelle
     {
         static void Main(string[] args)
         {
-         Console.WriteLine("{0,3} {1,10} {2,8} {3,10} {4,8}","Jahr","Guthaben","Zinsen","k.zinsen","bilanz");
+            Console.WriteLine("{0,3} {1,10} {2,8} {3,10} {4,8}", "Jahr", "Guthaben", "Zinsen", "k.zinsen", "bilanz");
 
             Console.WriteLine(" ");
 
@@ -39,29 +39,29 @@ namespace Finanztabelle
 
             for (int i = 0; i <= 60; i++)
             {
-               Console.Write("-");
+                Console.Write("-");
             }
             Console.WriteLine("");
             j--;
-            for (int J = 0; J<=j;J++)
+            for (int J = 0; J <= j; J++)
             {
-            kz = kz + k * (P / 100);
-            b = b + k;
+                kz = kz + k * (P / 100);
+                b = b + k;
 
 
-            Console.WriteLine("{0,3}| {1,9:F2}Euro| {2,6:F2}Euro| {3,8:F2}Euro| {4,6:F2}Euro", J, k, k* (P/100), kz, b);
-            k = k + (k * (P / 100));
+                Console.WriteLine("{0,3}| {1,9:F2}Euro| {2,6:F2}Euro| {3,8:F2}Euro| {4,6:F2}Euro", J, k, k * (P / 100), kz, b);
+                k = k + (k * (P / 100));
             }
-          
+
 
 
             for (int i = 0; i <= 60; i++)
             {
-             Console.Write("-");
+                Console.Write("-");
             }
-        }
-
 
         }
     }
+        
+}
 
