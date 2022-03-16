@@ -5,43 +5,36 @@ namespace SortingExample
     {
         static void Main(string[] args)
         {
-            int[] number = { 45, 15, 4, 10 };
-            bool var = true;
-            int temp;
-            int numLength = number.Length;
+            double[] daten = { 45, 10, 15, 4 };
+            bool wiederholen;
 
-
-            Console.WriteLine("Arrays bevor Sortierung\n");
-            Console.WriteLine(number[0]);
-            Console.WriteLine(number[1]);
-            Console.WriteLine(number[2]);
-            Console.WriteLine(number[3]);
-
-
-
-            for (int i = 1; (i <= (numLength - 1)) && var; i++)
+            do
             {
-                var = false;
-                for (int j = 0; j < (numLength - 1); j++)
+
+                wiederholen = false;
+
+                for (int index = 0; index < daten.Length - 1; index++)
                 {
-                    if (number[j + 1] > number[i])
+
+                    if (daten[index] > daten[index + 1])
                     {
-                        temp = number[i];
-                        number[i] = number[j + 1];
-                        number[i + 1] = temp;
-                        var = true;
+                        double buffer = daten[index + 1];
+                        //{ 45, 10, 15, 4 }
+                        daten[index + 1] = daten[index];
+                        //{ 45, 45, 15, 4 }
+                        daten[index] = buffer;
+                        //{ 10, 45, 15, 4 }
+                        wiederholen = true;
                     }
+
                 }
-            }
 
-            Console.WriteLine("Arrays nach Sortierung\n");
+            } while (wiederholen == true);
 
-
-            foreach (int num in number)
+            for (int i = 0; i <= daten.Length - 1; i++)
             {
-                Console.WriteLine("{0}", num);
+                Console.WriteLine(daten[i]);
             }
-            Console.Read();
         }
     }
 }
